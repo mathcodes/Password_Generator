@@ -1,7 +1,11 @@
 // Special characters for the function created
-const specialCharacters = "!@#$%^&*()";
+const numberString = "0123456789";
+const lowerString = "abcdefghijklmnopqrstuvwxyz";
+const upperString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 const generateButton = document.getElementById('generateBtn');
 generateButton.addEventListener('click', writePassword);
+
 
 // Write password to the #password input
 function writePassword() {
@@ -36,15 +40,15 @@ function generatePassword() {
 // Functions
   var functionArray = {
     getNumbers: function() {
-      return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+      return numberString[Math.floor(Math.random() * numberString.length)];
     },
 
     getLowerCases: function() {
-      return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+      return uplowerStringperString[Math.floor(Math.random() * lowerString.length)];
     },
 
     getUpperCases: function() {
-      return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+      return upperString[Math.floor(Math.random() * upperString.length)];
     },
 
     getSpecialCharacters: function() {
@@ -58,6 +62,8 @@ function generatePassword() {
   if (numbers === true) {
     minimumNumbers = functionArray.getNumbers();
     minimumCount++;
+  } 
+
   }
   if (lowerCases === true) {
     minimumLowerCases = functionArray.getLowerCases();
@@ -74,8 +80,9 @@ function generatePassword() {
 // empty string variable "randomPasswordGenerated" for the for loop getting random characters
   var randomPasswordGenerated = "";
   // for (let i = 0; i < (parseInt(passwordLength) - minimumCount); i++) {
-    for (let i = 0; i < (parseInt(passwordLength)); i++) {
-    var randomNumberPicked = Math.floor(Math.random() * 4);
+    for (let i = 0; i < (passwordLength)); i++) {
+      if (numbers === true)
+    var randomNumberPicked = Math.floor(Math.random() * 10);
     randomPasswordGenerated += randomNumberPicked;
   }
 // to make sure characters are added to the password
