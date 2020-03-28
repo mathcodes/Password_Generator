@@ -1,27 +1,35 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-            
-      <div class="wrapper">
+<html lang="en">
+<!-- Homework 3 - Jon Christie -->
+<head>
+    <!-- charset and steps to make website responsive, scaling, title, and links -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" type="text/css" href="assets/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    </head>
+<body>
+    <div id="wrapper">
         <header>
-          <h1>Password Generator</h1>
+            <h1>Password Generator</h1>
         </header>
-        <div class="card">
-          <div class="card-header">
+        <div id="content">
             <h2>Generate a Password</h2>
-          </div>
-          <div class="card-body">
-            <textarea id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
-          </div>
-          <div class="card-footer">
-            <button id="generateBtn" class="btn">Generate Password</button>
-          </div>
+            <hr>
+            <!-- This is a readonly text area for output-->
+            <textarea readonly id="password" placeholder="Your Secure Password"
+                aria-label="Generated Password">
+            </textarea>
+            <hr>
+            <div id="btn">
+                <!-- This is the generate password button -->
+                <button id="generate">Generate Password</button>
+            </div>
         </div>
-      </div>
+    </div>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
