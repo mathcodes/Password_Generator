@@ -38,9 +38,9 @@ function generatePassword() {
     
         // Confirmations for user to answer
         var confirmNumber = confirm("Will this contain numbers?");
-        var confirmCharacter = confirm("Will this contain special characters?");
         var confirmUppercase = confirm("Will this contain Uppercase letters?");
         var confirmLowercase = confirm("Will this contain Lowercase letters?");
+        var confirmCharacter = confirm("Will this contain special characters?");
 
     //making sure user selects at least one character type
     if (!confirmCharacter && !confirmNumber && !confirmUppercase && !confirmLowercase) {
