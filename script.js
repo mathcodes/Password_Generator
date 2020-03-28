@@ -4,7 +4,7 @@ var confirmNumber;
 var confirmCharacter;
 var confirmUppercase;
 var confirmLowercase;
-character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -16,35 +16,36 @@ var toUpper = function (x) {
     return x.toUpperCase();
 };
 // creates upper case array
-alpha2 = alpha.map(toUpper);
+var alpha2 = alpha.map(toUpper);
 
 var get = document.querySelector("#generate");
 
 get.addEventListener("click", function () {
-    ps = generatePassword();
+    var ps = generatePassword();
     document.getElementById("password").placeholder = ps;
 });
     // Input validation. Once validated (not if or else if), confirmations for character types follow in the "else" statement.
 function generatePassword() {
-    enter = parseInt(prompt("Type a password length between 8 and 128 characters and click Ok."));
+    var enter = parseInt(prompt("Type a password length between 8 and 128 characters and click Ok."));
     if (!enter) {
         alert("This needs a value");
-    } else if (enter < 8 || enter > 128) {
+    } 
     
-        enter = parseInt(prompt("You must choose between 8 and 128"));
-
-    } else {
+    if (enter < 8 || enter > 128) {
+        alert("You must choose between 8 and 128");
+        return;//stops it from trying to go to the next line of code.  
+    } 
+    
         // Confirmations for user to answer
-        confirmNumber = confirm("Will this contain numbers?");
-        confirmCharacter = confirm("Will this contain special characters?");
-        confirmUppercase = confirm("Will this contain Uppercase letters?");
-        confirmLowercase = confirm("Will this contain Lowercase letters?");
-    };
+        var confirmNumber = confirm("Will this contain numbers?");
+        var confirmCharacter = confirm("Will this contain special characters?");
+        var confirmUppercase = confirm("Will this contain Uppercase letters?");
+        var confirmLowercase = confirm("Will this contain Lowercase letters?");
 
     //making sure user selects at least one character type
     if (!confirmCharacter && !confirmNumber && !confirmUppercase && !confirmLowercase) {
         choices = alert("You must choose a criteria!");
-
+        return;//stops it from trying to go to the next line of code.  
     }
     // "Else if"s for 4, 3, 2, and 1 positive options
     else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
