@@ -8,6 +8,6 @@ This site generates a random password based on user-selected criteria. This app 
 
 ## INSTRUCTIONS
 
-Simply pull, clone, or download the repo to check this out! You can simply generate a random password with your choice of length (8-128 characters), uppercase, lowercase, and/or numbers. Just click and GO!!!
+[CLICK HERE](https://mathcodes.github.io/Password_Generator/)or on the link provided above to gimply generate a random password with your choice of length (8-128 characters), uppercase, lowercase, and/or numbers. Just click and GO!!!
 
 ## REACH OUT TO ME ON [MY GITHUB PAGE](https://github.com/mathcodes/)
